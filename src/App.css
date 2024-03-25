@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+body {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  border-radius: 50%;
+  max-width: 120px;
+  max-height: 120px;
+  position: absolute;
+  margin-top: -35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  display: inline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px 20px;
+  background-color: #333;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-links li {
+  padding: 0 10px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-links li a:hover {
+  color: lightgray;
+}
+
+/* Navbar Buttons */
+
+
+.btn {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.hero-container {}
+
+.hero-image {
+  height: 900px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1000;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+}
+
+/*Main Content*/
+
+.main-container {
+  display: flex;
+  gap: 200px;
+  column-gap: 200px;
+}
+
+.sidebar {
+  float: left;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  border: 3px solid black;
+}
+
+.cardimg {
+  height: 220px;
+  width: 220px;
+  border-bottom: 4px solid black;
 }
