@@ -1,52 +1,52 @@
 import React from "react";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const Main = () => {
+  const { scrollYProgress } = useViewportScroll();
+
   return (
     <>
       <div className="main-container">
         <div className="sidebar">
           <div class="filter_menu">
             <article>
-              <p>Category_1:</p>
+              <p>Gender:</p>
               <select class="filterby">
                 <option value="all">All</option>
-                <option value="c1_o1">c2_o1</option>
-                <option value="c1_o2">c2_01</option>
-                <option value="c1_o2">c2_o2</option>
-                <option value="c1_o3">c2_o3</option>
+                <option value="men">Men's</option>
+                <option value="women">Women's</option>
+                <option value="kids">Kids'</option>
               </select>
             </article>
             <article>
-              <p>Category_2:</p>
+              <p>Brand:</p>
               <select class="filterby">
-                <option value="all">All</option>
-                <option value="c2_o1">c2_o1</option>
-                <option value="c2_o12">c2_1</option>
-                <option value="c2_o2">c2_o2</option>
-                <option value="c2_o3">c2_o3</option>
+                <option value="all">All Brands</option>
+                <option value="nike">Nike</option>
+                <option value="adidas">Adidas</option>
+                <option value="puma">Puma</option>
+                <option value="reebok">Reebok</option>
               </select>
             </article>
 
             <article>
-              <p>Category_3:</p>
+              <p>Size:</p>
               <select class="filterby">
-                <option value="all">All</option>
-                <option value="c3_o1">c3_o1</option>
-                <option value="c3_o12">c3_1</option>
-                <option value="c3_o2">c3_o2</option>
-                <option value="c3_o3">c3_o3</option>
+                <option value="all">All Sizes</option>
+                <option value="size_7">Size 7</option>
+                <option value="size_8">Size 8</option>
+                <option value="size_9">Size 9</option>
+                <option value="size_10">Size 10</option>
               </select>
             </article>
             <article>
-              <p>★Rating★:</p>
+              <p>Price Range:</p>
               <select class="filterby">
-                <option value="all">All Ratings</option>
-                <option value="star_0">☆☆☆☆☆</option>
-                <option value="star_1">★☆☆☆☆</option>
-                <option value="star_2">★★☆☆☆</option>
-                <option value="star_3">★★★☆☆</option>
-                <option value="star_4">★★★★☆</option>
-                <option value="star_5">★★★★★</option>
+                <option value="all">All Prices</option>
+                <option value="under_50">$0 - $50</option>
+                <option value="50_100">$50 - $100</option>
+                <option value="100_200">$100 - $200</option>
+                <option value="over_200">Over $200</option>
               </select>
             </article>
           </div>
@@ -55,75 +55,111 @@ const Main = () => {
           <div id="container" class="container">
             <div class="all">All</div>
             <div class="all trait trait star_0">
-              <a href="#amber">One</a>
+              <a href="#running_shoes">Running Shoes</a>
             </div>
             <div class="all trait trait star_1">
-              <a href="#amber">Two</a>
+              <a href="#sneakers">Sneakers</a>
             </div>
             <div class="all trait trait star_5">
-              <a href="#amber">Three</a>
+              <a href="#boots">Boots</a>
             </div>
             <div class="all trait trait star_4">
-              <a href="#amber">Four</a>
+              <a href="#sandals">Sandals</a>
             </div>
           </div>
         </div>
 
         <div className="main-content">
-          <div className="card card-1">
-            <img
-              className="cardimg"
-              src={require("../static/logo.png")}
-              alt="img"
-            />
-            <h4>Product Name</h4>
-            <h5>Product Price</h5>
-          </div>
-          <div className="card card-1">
-            <img
-              className="cardimg"
-              src={require("../static/logo.png")}
-              alt="img"
-            />
-            <h4>Product Name</h4>
-            <h5>Product Price</h5>
-          </div>
-          <div className="card card-1">
-            <img
-              className="cardimg"
-              src={require("../static/logo.png")}
-              alt="img"
-            />
-            <h4>Product Name</h4>
-            <h5>Product Price</h5>
-          </div>
-          <div className="card card-1">
-            <img
-              className="cardimg"
-              src={require("../static/logo.png")}
-              alt="img"
-            />
-            <h4>Product Name</h4>
-            <h5>Product Price</h5>
-          </div>
-          <div className="card card-1">
-            <img
-              className="cardimg"
-              src={require("../static/logo.png")}
-              alt="img"
-            />
-            <h4>Product Name</h4>
-            <h5>Product Price</h5>
-          </div>
-          <div className="card card-1">
-            <img
-              className="cardimg"
-              src={require("../static/logo.png")}
-              alt="img"
-            />
-            <h4>Product Name</h4>
-            <h5>Product Price</h5>
-          </div>
+          <motion.div
+            className="card card-1"
+            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="card card-1">
+              <img
+                className="cardimg"
+                src={require("../static/logo.png")}
+                alt="img"
+              />
+              <h4>Product Name</h4>
+              <h5>Product Price</h5>
+            </div>
+          </motion.div>
+          <motion.div
+            className="card card-2"
+            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="card card-2">
+              <img
+                className="cardimg"
+                src={require("../static/logo.png")}
+                alt="img"
+              />
+              <h4>Product Name</h4>
+              <h5>Product Price</h5>
+            </div>
+          </motion.div>
+          <motion.div
+            className="card card-3"
+            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="card card-3">
+              <img
+                className="cardimg"
+                src={require("../static/logo.png")}
+                alt="img"
+              />
+              <h4>Product Name</h4>
+              <h5>Product Price</h5>
+            </div>
+          </motion.div>
+          <motion.div
+            className="card card-4"
+            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="card card-4">
+              <img
+                className="cardimg"
+                src={require("../static/logo.png")}
+                alt="img"
+              />
+              <h4>Product Name</h4>
+              <h5>Product Price</h5>
+            </div>
+          </motion.div>
+          <motion.div
+            className="card card-5"
+            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="card card-5">
+              <img
+                className="cardimg"
+                src={require("../static/logo.png")}
+                alt="img"
+              />
+              <h4>Product Name</h4>
+              <h5>Product Price</h5>
+            </div>
+          </motion.div>
+          <motion.div
+            className="card card-6"
+            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="card card-6">
+              <img
+                className="cardimg"
+                src={require("../static/logo.png")}
+                alt="img"
+              />
+              <h4>Product Name</h4>
+              <h5>Product Price</h5>
+            </div>
+          </motion.div>
         </div>
       </div>
     </>
