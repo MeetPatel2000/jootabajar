@@ -6,8 +6,8 @@ const Hero = () => {
       <div className="hero-container">
         <img
           className="hero-image"
-          src={require("../static/hero-image.png")}
-          alt="heroimg"
+          src={require("../static/hero-1.jpg")}
+          alt="heroimage"
         />
         <div class="hero-text">
           <h1>Welcome to Jootabajar</h1>

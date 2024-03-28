@@ -1,9 +1,25 @@
 import React from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import shoesCards from "../shoesCards";
+import Entry from "./entry";
+
+function createEntry(cardDetail) {
+  return (
+    <motion.div
+      whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
+      transition={{ duration: 0.2 }}
+    >
+      <Entry
+        key={cardDetail.id}
+        image={cardDetail.image}
+        name={cardDetail.productName}
+        price={cardDetail.productPrice}
+      />
+    </motion.div>
+  );
+}
 
 const Main = () => {
-  const { scrollYProgress } = useViewportScroll();
-
   return (
     <>
       <div className="main-container">
@@ -69,98 +85,7 @@ const Main = () => {
           </div>
         </div>
 
-        <div className="main-content">
-          <motion.div
-            className="card card-1"
-            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="card card-1">
-              <img
-                className="cardimg"
-                src={require("../static/logo.png")}
-                alt="img"
-              />
-              <h4>Product Name</h4>
-              <h5>Product Price</h5>
-            </div>
-          </motion.div>
-          <motion.div
-            className="card card-2"
-            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="card card-2">
-              <img
-                className="cardimg"
-                src={require("../static/logo.png")}
-                alt="img"
-              />
-              <h4>Product Name</h4>
-              <h5>Product Price</h5>
-            </div>
-          </motion.div>
-          <motion.div
-            className="card card-3"
-            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="card card-3">
-              <img
-                className="cardimg"
-                src={require("../static/logo.png")}
-                alt="img"
-              />
-              <h4>Product Name</h4>
-              <h5>Product Price</h5>
-            </div>
-          </motion.div>
-          <motion.div
-            className="card card-4"
-            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="card card-4">
-              <img
-                className="cardimg"
-                src={require("../static/logo.png")}
-                alt="img"
-              />
-              <h4>Product Name</h4>
-              <h5>Product Price</h5>
-            </div>
-          </motion.div>
-          <motion.div
-            className="card card-5"
-            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="card card-5">
-              <img
-                className="cardimg"
-                src={require("../static/logo.png")}
-                alt="img"
-              />
-              <h4>Product Name</h4>
-              <h5>Product Price</h5>
-            </div>
-          </motion.div>
-          <motion.div
-            className="card card-6"
-            whileHover={{ rotateY: 10, scale: 1.05, zIndex: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="card card-6">
-              <img
-                className="cardimg"
-                src={require("../static/logo.png")}
-                alt="img"
-              />
-              <h4>Product Name</h4>
-              <h5>Product Price</h5>
-            </div>
-          </motion.div>
-        </div>
+        <div className="main-content">{shoesCards.map(createEntry)}</div>
       </div>
     </>
   );
