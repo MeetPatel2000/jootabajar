@@ -14,6 +14,7 @@ function createEntry(cardDetail) {
         image={cardDetail.image}
         name={cardDetail.productName}
         price={cardDetail.productPrice}
+        size={cardDetail.size}
       />
     </motion.div>
   );

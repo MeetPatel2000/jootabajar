@@ -71,6 +71,73 @@ li {
   display: block;
 }
 
+.submenu.accountInfo {
+  margin-right: 150px;
+}
+
+.accountMenu {
+  display: grid;
+  grid-template-rows: 40px max-content;
+  gap: 10px;
+}
+
+.accountToggle {
+  all: unset;
+  background-color: dodgerblue;
+  color: white;
+  width: 40px;
+  padding: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.accountToggle::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-width: 0 3px 3px 0;
+  border-style: solid;
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
+
+.accountList {
+  background-color: white;
+  color: #444;
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(4, 40px);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 0;
+  transition: 0.4s;
+  position: absolute;
+  top: 50px;
+  left: 85%;
+  z-index: 1000;
+}
+
+.accountListItem {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  padding-right: 20px;
+  margin-left: -25px;
+}
+
+.accountToggle:focus~.accountList {
+  height: 200px;
+}
+
+.accountInfoButton {
+  margin-left: 500px;
+}
 
 /* Navbar Buttons */
 
@@ -201,8 +268,10 @@ li {
 }
 
 .submit-button {
-  width: 100%;
+  margin-top: 25px;
+  width: 100px;
   padding: 10px;
+  margin-left: 110px;
   background-color: #000;
   color: #fff;
   border: none;
@@ -211,9 +280,64 @@ li {
 
 .login-link {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-left: 25px;
 }
 
 .login-anchor {
-  color: #000;
+  cursor: pointer;
+}
+
+
+
+.google-button,
+.facebook-button {
+  width: 150px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.55rem;
+}
+
+.google-button {
+  /* White background for Google button */
+  color: black;
+  /* Black text color for Google button */
+}
+
+.facebook-button {
+  background-color: blue;
+  /* Blue background for Facebook button */
+}
+
+
+.google-button:hover,
+.facebook-button:hover {
+  opacity: 0.8;
+}
+
+.or {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 33px;
+  margin-top: 30px;
+}
+
+.social-buttons {
+  flex: 2;
+  /* Take up the right side */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 25px;
+}
+
+.gap {
+  padding: 20px;
 }

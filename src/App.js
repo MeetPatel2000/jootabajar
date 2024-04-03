@@ -9,6 +9,7 @@ import Kids from "./components/kids";
 import MenShoes from "./components/menshoes";
 import WomenShoes from "./components/womenshoes";
 import Signup from "./components/signup";
+import Dashboard from "./components/dashboard";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="menshoes" element={<MenShoes />}></Route>
         <Route path="womenshoes" element={<WomenShoes />}></Route>
         <Route path="signup" element={<Signup />}></Route>
+        <Route path="dashboard" element={<Dashboard />}></Route>
       </Routes>
     </>
   );
