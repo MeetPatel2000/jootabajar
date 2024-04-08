@@ -192,20 +192,34 @@ li {
 /*Main Content*/
 
 .main-container {
-  display: flex;
-  column-gap: 250px;
-  padding: 50px;
-  background-color: #efedee;
+  padding-bottom: 50px;
 }
 
-.main-content {
+.main-container>div {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.box {
+  width: calc(30% - 15px);
+}
+
+.side_container>div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.article {
+  width: calc(30% - 15px);
+  padding-bottom: 20px;
 }
 
 .card {
-  border: 2px solid #333;
   /* Base border color */
   border-radius: 10px;
   /* Rounded corners */
@@ -216,13 +230,11 @@ li {
 }
 
 .cardimg {
-  height: 200px;
+  height: 360px;
   width: 100%;
   /* Make image width fill the card */
   object-fit: cover;
   /* Ensure image covers the entire container */
-  border-bottom: 4px solid black;
-  border-radius: 8px 8px 0 0;
   /* Round bottom corners of image */
 }
 
@@ -230,12 +242,6 @@ li {
   padding: 15px;
 }
 
-.sidebar {
-  width: 300px;
-  padding-left: 23px;
-  border: 2px dotted black;
-  margin-right: -77px;
-}
 
 
 .card h4 {
